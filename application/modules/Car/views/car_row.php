@@ -9,6 +9,6 @@
         <a href="javascript:void(0);" onClick="showEditForm(<?php echo $row['id']?>);" class="btn btn-success edit-btn" >Edit</a>
     </td>
     <td>
-        <a href="" class="btn btn-danger delete-btn">Delete</a>
+        <a href="javascript:void(0);" onClick="confirmDeleteModel(<?php echo $row['id']?>);" class="btn btn-danger delete-btn">Delete</a>
     </td>
 </tr>

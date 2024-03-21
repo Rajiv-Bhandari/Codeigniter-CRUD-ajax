@@ -73,7 +73,7 @@ class Car extends MX_Controller {
         {
             $response['msg'] = 'Either record deleted or not found in database';
             $response['status'] = 100;
-            json_encode($response);
+            echo json_encode($response);
             exit;
         }
 
@@ -105,6 +105,26 @@ class Car extends MX_Controller {
             $response['price'] = strip_tags(form_error('price'));
         }
         echo json_encode($response);
+    }
+
+    function deleteModel($id)
+    {
+        $this->load->model('Car_model');
+        $row = $this->Car_model->getRow($id);
+        if (empty($row))
+        {
+            $response['msg'] = 'Either record deleted or not found in database';
+            $response['status'] = 0;
+            echo json_encode($response);
+            exit;
+        }
+        else
+        {
+            $this->Car_model->delete($id);
+            $response['msg'] = 'Record has been deleted successfully';
+            $response['status'] = 1;
+            echo json_encode($response);
+        }
     }
 }
 ?>

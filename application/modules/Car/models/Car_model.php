@@ -30,5 +30,11 @@ Class Car_model extends CI_model{
         $this->db->update('car_models', $formArray);
         return $id;
     }
+
+    function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('car_models');
+    }
 }
 ?>

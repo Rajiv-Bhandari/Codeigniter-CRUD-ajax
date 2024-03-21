@@ -64,6 +64,26 @@
   </div>
 </div>
 
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" onclick="deleteNow();" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript">
     function showModal() {
@@ -79,7 +99,7 @@
             }
         })
     }
-
+    // createCarModel
     $("body").on("submit", "#createCarModel", function(e){
         e.preventDefault();
         $.ajax({
@@ -215,6 +235,41 @@
             }
         });
     });
+
+    function confirmDeleteModel(id)
+    {
+        $("#deleteModal").modal('show');
+        $("#deleteModal .modal-body").html("Are you sure you want to delete #"+id+" ?");
+        $("#deleteModal").data("id",id);
+    }
+
+    function deleteNow()
+    {
+        var id = $("#deleteModal").data('id');
+        $.ajax({
+            url: '<?php echo base_url().'index.php/car/deleteModel/'?>'+id,
+            type: 'POST',
+            dataType: 'json',
+            success : function(response)
+            {
+                if(response['status'] == 1)
+                {
+                    $("#deleteModal").modal('hide');
+                    reloadCarModelList(); 
+                }   
+                else{
+                    $("#deleteModal").modal('hide');
+                    $("#deleteModal .modal-body").html(response['msg']);
+                    $("#deleteModal").modal("show");
+                }
+            }
+        });     
+    }
+
+    function reloadCarModelList() {
+        $('#carModelList').load('<?php echo base_url().'index.php/car/index #carModelList'?>');
+    }
+
 </script>
 </body>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

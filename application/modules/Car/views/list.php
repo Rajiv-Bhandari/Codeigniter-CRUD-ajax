@@ -62,22 +62,18 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<!-- Modal -->
+<!-- Create Modal -->
 <div class="modal fade" id="createCar" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Create</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Create New Car Model</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div id="response">
+
       </div>
     </div>
   </div>
@@ -87,17 +83,72 @@
 <script type="text/javascript">
     function showModal() {
         $('#createCar').modal('show');
+    
+        $.ajax({
+            url: '<?php echo base_url().'index.php/car/showCreateForm'?>',
+            type: 'POST',
+            data: {},
+            dataType: 'json',
+            success : function(response)
+            {
+                $('#response').html(response["html"]);
+            }
+        })
     }
-    $.ajax({
-        url: '<?php echo base_url().'index.php/car/showCreateForm'?>',
-        type: 'POST',
-        data: {},
-        dataType: 'json',
-        success : function(response)
-        {
-            console.log(response);
-        }
-    })
+
+    $("body").on("submit", "#createCarModel", function(e){
+        e.preventDefault();
+        $.ajax({
+            url: '<?php echo base_url().'index.php/car/saveModel'?>',
+            type: 'POST',
+            data: $(this).serializeArray(),
+            dataType: 'json',
+            success : function(response)
+            {
+                if(response['status'] == 0)
+                {
+                    if(response["name"] != "")
+                    {
+                        $(".nameError").html(response["name"]).addClass('invalid-feedback d-block');
+                        $("#name").addClass('is-invalid');
+                    }
+                    else{
+                        $(".nameError").html("").removeClass('invalid-feedback d-block');
+                        $("#name").removeClass('is-invalid');
+                    }
+                    if(response["color"] != "")
+                    {
+                        $(".colorError").html(response["color"]).addClass('invalid-feedback d-block');
+                        $("#color").addClass('is-invalid');
+                    }
+                    else{
+                        $(".colorError").html("").removeClass('invalid-feedback d-block');
+                        $("#color").removeClass('is-invalid');
+                    }
+                    if(response["price"] != "")
+                    {
+                        $(".priceError").html(response["price"]).addClass('invalid-feedback d-block');
+                        $("#price").addClass('is-invalid');
+                    }
+                    else{
+                        $(".priceError").html("").removeClass('invalid-feedback d-block');
+                        $("#price").removeClass('is-invalid');
+                    }
+                }
+                else
+                {
+                    $(".nameError").html("").removeClass('invalid-feedback d-block');
+                    $("#name").removeClass('is-invalid');
+
+                    $(".colorError").html("").removeClass('invalid-feedback d-block');
+                    $("#color").removeClass('is-invalid');
+
+                    $(".priceError").html("").removeClass('invalid-feedback d-block');
+                    $("#price").removeClass('is-invalid');                    
+                }
+            }
+        });
+    });
 </script>
 </body>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

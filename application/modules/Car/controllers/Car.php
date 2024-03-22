@@ -110,14 +110,11 @@ class Car extends MX_Controller {
     function deleteModel($id)
     {
         try{
-            throw new Exception('Exception is being called!');
             $this->load->model('Car_model');
             $row = $this->Car_model->getRow($id);
             if (empty($row))
             {
-                $response['msg'] = 'Either record deleted or not found in database';
-                $response['status'] = 0;
-                exit;
+                throw new Exception('Either record deleted or not found in database');
             }
             else
             {

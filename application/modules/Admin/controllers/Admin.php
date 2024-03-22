@@ -8,7 +8,7 @@ class Admin extends MX_Controller {
         $employee = $this->Admin_model->all();
         $data = array();
         $data['employee'] = $employee;
-        $this->load->view('adminhom',$data);
+        $this->load->view('adminhom',$data);   
     }
 
     public function create()
@@ -77,8 +77,31 @@ class Admin extends MX_Controller {
     
     public function delete($userId)
     {
-        $this->load->model('Admin_model');
-        $user = $this->Admin_model->getUser($userId);
-        echo json_encode(array('status' => 'success'));
+        try{
+            throw new Exception("User Not found!");
+            if (empty($userId))
+            {  
+                var_dump($userId);
+                 
+                
+            }
+            else{
+                var_dump($userId);
+                $this->load->model('Admin_model');
+                $user = $this->Admin_model->getUser($userId);
+                echo json_encode(array('status' => 'success'));
+            }
+            
+        }
+       catch (Exception $e){
+            var_dump($e->getMessage());
+            $response['msg'] = 'Either record deleted or not found in database';
+            $response['status'] = 0;
+       }
+   
+
+
+
+
     }
 }

@@ -219,6 +219,7 @@
                 type: 'POST',
                 dataType: 'json',
                 success: function(response) {
+                    console.log(response);
                     // Check if response status is success
                     if (response.status === 'success') {
                         // Close the modal

@@ -26,7 +26,7 @@
                     <th>Name</th>
                     <th>Color</th>
                     <th>Transmission</th>
-                    <th>Price</th>
+                    <th>Price (Rs.)</th>
                     <th>Created Date</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -252,6 +252,7 @@
             dataType: 'json',
             success : function(response)
             {
+                console.log(response);
                 if(response['status'] == 1)
                 {
                     $("#deleteModal").modal('hide');
@@ -259,8 +260,7 @@
                 }   
                 else{
                     $("#deleteModal").modal('hide');
-                    $("#deleteModal .modal-body").html(response['msg']);
-                    $("#deleteModal").modal("show");
+                    alert(response['msg']);
                 }
             }
         });     

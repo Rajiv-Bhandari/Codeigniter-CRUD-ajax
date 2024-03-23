@@ -10,27 +10,27 @@ Lists
 Read
 ----
 
-.. image:: screenshots/index.png
+.. image:: application/screenshots/index.png
    :alt: Read
    :width: 400px
 
 Create
 ------
 
-.. image:: screenshots/create.png
+.. image:: application/screenshots/create.png
    :alt: Create
    :width: 400px
 
 Update
 ------
 
-.. image:: screenshots/edit.png
+.. image:: application/screenshots/edit.png
    :alt: Update
    :width: 400px
 
 Delete
 ------
 
-.. image:: screenshots/delete.png
+.. image:: application/screenshots/delete.png
    :alt: Delete
    :width: 400px

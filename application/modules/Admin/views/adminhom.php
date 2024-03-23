@@ -239,7 +239,74 @@
     });
 </script>
 
+<button class="btn btn-dark" style="margin-left:600px;" id="jButton">One</button>
+<button class="btn btn-secondary" id="jButtontwo">Two</button>
 
+<script>
+    // Using jQuery's document ready function to ensure the DOM is fully loaded
+    $(document).ready(function() {
+        // Using jQuery to attach event handler using on() method
+        $("#jButton").on("click", function() {
+            alert("This is using jQuery's on() method.");
+        });
+
+        // Using jQuery to attach event handler using click() method
+        $("#jButtontwo").click(function() {
+            alert("This is using jQuery's click() method.");
+        });
+    });
+</script>
+
+<!-- Search input field -->
+<input type="text" id="searchInput" placeholder="Search">
+
+<!-- Div to display search results -->
+<div id="searchResults"></div>
+
+<script>
+    // Predefined set of values
+    var defaultValues = ["Apple", "Banana", "Orange", "Mango", "Grapes", "Pineapple", "Kiwi", "Strawberry", "Peach", "Watermelon","Pomogranate"];
+
+    // Display default values when the page loads
+    displaySearchResults(defaultValues);
+
+    // Using jQuery's document ready function to ensure the DOM is fully loaded
+    $(document).ready(function() {
+        // Attach keyup event handler to the search input field
+        $("#searchInput").on("keyup", function() {
+            // Get the value entered in the search input field
+            var searchTerm = $(this).val().toLowerCase();
+
+            // Filter default values based on the search term
+            var filteredValues = defaultValues.filter(function(value) {
+                return value.toLowerCase().includes(searchTerm);
+            });
+
+            // Display filtered results
+            displaySearchResults(filteredValues);
+        });
+    });
+
+    // Function to display search results
+    function displaySearchResults(results) {
+        // Clear previous results
+        $("#searchResults").empty();
+
+        // If there are no results, display a message
+        if (results.length === 0) {
+            $("#searchResults").text("No results found.");
+            return;
+        }
+
+        // Display each result in a list
+        var listItems = results.map(function(result) {
+            return "<li>" + result + "</li>";
+        });
+
+        // Append the list items to the search results div
+        $("#searchResults").append("<ul>" + listItems.join("") + "</ul>");
+    }
+</script>
 
 </body>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

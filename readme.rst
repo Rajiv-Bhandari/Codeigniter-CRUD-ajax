@@ -1,70 +1,24 @@
 ###################
-What is CodeIgniter
+CRUD Operations in CodeIgniter Using Ajax
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+This project demonstrates basic CRUD (Create, Read, Update, Delete) operations implemented in CodeIgniter, a powerful PHP framework. Using Ajax, these operations are performed asynchronously, providing a seamless user experience without the need for page reloads. The application allows users to manage car models, including adding new models, viewing existing ones, editing their details, and deleting them. Each operation is handled through dedicated controller methods, which interact with the database using CodeIgniter's built-in functionalities. With its intuitive interface and efficient backend processing, this project showcases the power and simplicity of CodeIgniter for building dynamic web applications.
 
-*******************
-Release Information
-*******************
+## Screenshots
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+### Read
 
-**************************
-Changelog and New Features
-**************************
+![Read](screenshots/index.png)
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+### Create
 
-*******************
-Server Requirements
-*******************
+![Create](screenshots/create.png)
 
-PHP version 5.6 or newer is recommended.
+### Update
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+![Update](screenshots/edit.png)
 
-************
-Installation
-************
+### Delete
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+![Delete](screenshots/delete.png)
 
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.

@@ -1,0 +1,189 @@
+Assignment table data in array based on empid of mysql-practice database
+
+Array (
+    [1] => Array (
+        [0] => Array (
+            [empid] => 1
+            [pid] => 1
+            [responsibility] => Project Management
+            [duration_start] => 2022-01-01
+            [duration_end] => 2024-01-01
+        )
+        [1] => Array (
+            [empid] => 1
+            [pid] => 2
+            [responsibility] => Software Development
+            [duration_start] => 2021-10-15
+            [duration_end] => 2023-10-15
+        )
+    )
+    [3] => Array (
+        [0] => Array (
+            [empid] => 3
+            [pid] => 3
+            [responsibility] => Marketing Campaign
+            [duration_start] => 2022-05-20
+            [duration_end] => 2024-05-20
+        )
+    )
+    [4] => Array (
+        [0] => Array (
+            [empid] => 4
+            [pid] => 4
+            [responsibility] => Data Analysis
+            [duration_start] => 2021-12-10
+            [duration_end] => 2023-12-10
+        )
+    )
+    [5] => Array (
+        [0] => Array (
+            [empid] => 5
+            [pid] => 5
+            [responsibility] => Graphic Design
+            [duration_start] => 2022-03-05
+            [duration_end] => 2024-03-05
+        )
+    )
+    [6] => Array (
+        [0] => Array (
+            [empid] => 6
+            [pid] => 6
+            [responsibility] => Project Management
+            [duration_start] => 2023-02-01
+            [duration_end] => 2025-02-01
+        )
+    )
+    [7] => Array (
+        [0] => Array (
+            [empid] => 7
+            [pid] => 7
+            [responsibility] => Software Development
+            [duration_start] => 2022-08-15
+            [duration_end] => 2024-08-15
+        )
+    )
+    [8] => Array (
+        [0] => Array (
+            [empid] => 8
+            [pid] => 8
+            [responsibility] => Marketing Campaign
+            [duration_start] => 2023-04-20
+            [duration_end] => 2025-04-20
+        )
+    )
+    [9] => Array (
+        [0] => Array (
+            [empid] => 9
+            [pid] => 9
+            [responsibility] => Data Analysis
+            [duration_start] => 2022-11-10
+            [duration_end] => 2024-11-10
+        )
+    )
+    [10] => Array (
+        [0] => Array (
+            [empid] => 10
+            [pid] => 10
+            [responsibility] => Graphic Design
+            [duration_start] => 2023-06-05
+            [duration_end] => 2025-06-05
+        )
+    )
+    [11] => Array (
+        [0] => Array (
+            [empid] => 11
+            [pid] => 11
+            [responsibility] => Project Management
+            [duration_start] => 2022-09-01
+            [duration_end] => 2024-09-01
+        )
+    )
+    [12] => Array (
+        [0] => Array (
+            [empid] => 12
+            [pid] => 12
+            [responsibility] => Software Development
+            [duration_start] => 2023-01-15
+            [duration_end] => 2025-01-15
+        )
+    )
+    [13] => Array (
+        [0] => Array (
+            [empid] => 13
+            [pid] => 13
+            [responsibility] => Marketing Campaign
+            [duration_start] => 2022-07-20
+            [duration_end] => 2024-07-20
+        )
+    )
+    [14] => Array (
+        [0] => Array (
+            [empid] => 14
+            [pid] => 14
+            [responsibility] => Data Analysis
+            [duration_start] => 2023-03-10
+            [duration_end] => 2025-03-10
+        )
+    )
+    [15] => Array (
+        [0] => Array (
+            [empid] => 15
+            [pid] => 15
+            [responsibility] => Graphic Design
+            [duration_start] => 2022-10-05
+            [duration_end] => 2024-10-05
+        )
+        [1] => Array (
+            [empid] => 15
+            [pid] => 15
+            [responsibility] => Project Management
+            [duration_start] => 2012-01-01
+            [duration_end] => 2024-01-01
+        )
+    )
+    [16] => Array (
+        [0] => Array (
+            [empid] => 16
+            [pid] => 16
+            [responsibility] => Project Management
+            [duration_start] => 2023-05-01
+            [duration_end] => 2025-05-01
+        )
+    )
+    [17] => Array (
+        [0] => Array (
+            [empid] => 17
+            [pid] => 17
+            [responsibility] => Software Development
+            [duration_start] => 2022-12-15
+            [duration_end] => 2024-12-15
+        )
+    )
+    [18] => Array (
+        [0] => Array (
+            [empid] => 18
+            [pid] => 18
+            [responsibility] => Marketing Campaign
+            [duration_start] => 2023-08-20
+            [duration_end] => 2025-08-20
+        )
+    )
+    [19] => Array (
+        [0] => Array (
+            [empid] => 19
+            [pid] => 19
+            [responsibility] => Data Analysis
+            [duration_start] => 2022-04-10
+            [duration_end] => 2024-04-10
+        )
+    )
+    [20] => Array (
+        [0] => Array (
+            [empid] => 20
+            [pid] => 20
+            [responsibility] => Graphic Design
+            [duration_start] => 2023-11-05
+            [duration_end] => 2025-11-05
+        )
+    )
+)

@@ -79,6 +79,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'codeigniterCRUD',
+	// 'database' => 'mysql-practice',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

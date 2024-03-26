@@ -36,5 +36,21 @@ Class Car_model extends CI_model{
         $this->db->where('id', $id);
         $this->db->delete('car_models');
     }
+
+    public function getAssignmentArray()
+    {
+        $assignments = $this->db->get('assignment')->result_array();
+        $assignment_array = array();
+    
+        foreach ($assignments as $assignment) {
+            $empid = $assignment['empid'];
+            if (!isset($assignment_array[$empid])) {
+                $assignment_array[$empid] = array();
+            }
+            $assignment_array[$empid][] = $assignment;
+        }
+    
+        return $assignment_array;
+    }    
 }
 ?>

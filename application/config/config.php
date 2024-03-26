@@ -90,7 +90,7 @@ $config['language']	= 'english';
 |
 */
 $config['charset'] = 'UTF-8';
-
+$config['dbcollat'] = 'utf8_general_ci';
 /*
 |--------------------------------------------------------------------------
 | Enable/Disable System Hooks

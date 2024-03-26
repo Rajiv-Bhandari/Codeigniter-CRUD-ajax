@@ -4,6 +4,9 @@ class Car extends MX_Controller {
     function index()
     {
         $this->load->model('Car_model');
+        // $assignments_by_empid = $this->Car_model->getAssignmentArray();
+        // print_r($assignments_by_empid);
+        // exit();
         $rows = $this->Car_model->all();
         $data['rows'] = $rows;
 
